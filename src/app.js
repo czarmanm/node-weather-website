@@ -7,6 +7,7 @@ const geocode = require('./utils/geocode');
 const baseModule = require('hbs');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -88,6 +89,6 @@ app.get('*', (req, res) => {
 });
 
 // Starting server
-app.listen(3000, () => {
-    log('Server is up in port 3000');
+app.listen(port, () => {
+    log('Server is up in port ' + port);
 });
